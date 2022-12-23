@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {box-sizing: border-box}
+      
+      /* Set height of body and the document to 100% */
+      body, html {
+          height: 100%;
+          margin: 0;
+          font-family: Arial;
+      }
+      
+      /* Style tab links */
+      .tablink {
+          background-color: #555;
+          color: white;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          font-size: 17px;
+          width: 25%;
+      }
+      
+      .tablink:hover {
+          background-color: #777;
+      }
+      
+      /* Style the tab content (and add height:100% for full page content) */
+      .tabcontent {
+          color: white;
+          display: none;
+          padding: 100px 20px;
+          height: 100%;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+
+      .points{
+      border: dotted 10px;
+      border-color: white;
+float: right;
+margin-top: 50px;
+margin-right: 750px;
+margin-left: 250px;
+padding-left: 40px;
+padding-right: 40px;
+padding-top: 10px;
+padding-bottom: 20px;
+    }
+    #p1{
+      float: right;
+      margin-bottom: 20px;
+      margin-right: 900px;
+    }
+
+    #d1{
+     float: right;
+    }
+
+    #g1{
+      color: rgb(255, 247, 0);
+    }
+      
+      #Home {background-color: rgb(255, 213, 0);}
+      #News { background: linear-gradient(to bottom left, rgb(255, 196, 59), rgb(85, 176, 114));}
+      #Contact {background-color: rgb(237, 128, 128);}
+    </style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'blue')">Home</button>
+<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
+<button class="tablink" onclick="openPage('Contact', this, 'orange')">Contact</button>
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <img src="чай.jpg" width="190px" height="200px">
+  <img id="p1" src="чаечек.jpg" width="290px" height="300px">
+  <h1> ЧАЙ ДЛЯ СЕБЕ</h1>
+  <p>відпочинь та попий чайку)</p>
+  <br>
+  <details>
+  <summary>інфа</summary>
+  <ul>
+  <li> Я люблю чорний чай з лимоном (не знаю навіщо тобі ця інформація)</li>
+</ul>
+</details>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <form>
+    <div= class="points" id="s1">
+      <label>оберіть основу</label> 
+      <br>
+      <label>чорний чай</label> 
+      <input type="radio"  name="language">
+      <br> 
+      <label>зелений чай</label>
+      <input type="radio"  name="language">
+   <br>
+   <br>
+   <label>з яким смаком?</label>
+   <br>
+   <input type="text"  placeholder="без дод. смаку">
+   <br>
+   <br>
+   <label>ще щось?</label>
+   <br>
+   <label>лід</label> 
+   <input type="radio"  name="language">
+   <br> 
+   <label>лимон</label>
+   <input type="radio"  name="language">
+   <br> 
+   <label>молоко</label>
+   <input type="radio"  name="language">
+<br>
+<br>
+<label id="a5">адрес</label>
+<input id="a5" type="text" placeholder="...">
+     </form>
+     <br>
+     <br>
+<button type="button" id="d1">замовити</button>
+<h2 id="g1">УВАГА! Коли ви натиснете "замовити", нічого не станеться. Нам просто ліньки робити вам чай</h2>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>News</h3>
+  <h2>тут ти зможеш дізнатись про незвичайні чаї</h2> 
+  <a href="https://gemini.ua/najnezvychajnishi-i-tsikavi-sorty-chayu/">TeaTime</a>
+  <h2> а тут як закип'ятити воду</h2>
+  <a href="https://www.youtube.com/watch?v=y8sxa92nkOY">YouTube</a>
+  <br>
+  <h>Якщо ти досі не навчився заварбвати чай, то на сторінці "contact" зможеш його замовити)))</h>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>
